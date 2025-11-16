@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us - Yellow Jacket Toys PH</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="about.css" /> 
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <main class="about-page">
+    <h1>ABOUT US</h1>
+    <p class="tagline">A shop running for 6 years, providing all your kidult needs</p>
+
+    <div class="about-image">
+      <img src="images/logo.jpg" alt="Yellow Jacket Logo" />
+    </div>
+
+    <!-- Core Values Section -->
+    <section class="core-values-section">
+      <h2>CORE VALUES</h2>
+      <div class="core-values">
+        <div class="core-box">
+          <img src="images/elements/check.png" alt="Check Icon" class="core-icon" />
+          <h3>100% AUTHENTIC</h3>
+          <p>All products are authentic and original from our partnered suppliers</p>
+        </div>
+        <div class="core-box">
+          <img src="images/elements/check.png" alt="Check Icon" class="core-icon" />
+          <h3>100% AUTHENTIC</h3>
+          <p>All products are authentic and original from our partnered suppliers</p>
+        </div>
+        <div class="core-box">
+          <img src="images/elements/check.png" alt="Check Icon" class="core-icon" />
+          <h3>100% AUTHENTIC</h3>
+          <p>All products are authentic and original from our partnered suppliers</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission and Vision Section -->
+    <section class="mission-vision-section">
+      <h2>MISSION AND VISION</h2>
+      <div class="core-values">
+        <div class="core-box">
+          <img src="images/elements/check.png" alt="Check Icon" class="core-icon" />
+          <h3>100% AUTHENTIC</h3>
+          <p>All products are authentic and original from our partnered suppliers</p>
+        </div>
+        <div class="core-box">
+          <img src="images/elements/check.png" alt="Check Icon" class="core-icon" />
+          <h3>100% AUTHENTIC</h3>
+          <p>All products are authentic and original from our partnered suppliers</p>
+        </div>
+        <div class="core-box">
+          <img src="images/elements/check.png" alt="Check Icon" class="core-icon" />
+          <h3>100% AUTHENTIC</h3>
+          <p>All products are authentic and original from our partnered suppliers</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+    // Load header and footer dynamically
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('header-placeholder').innerHTML = data);
+
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+  </script>
+</body>
+</html>

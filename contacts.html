@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact Us - Yellow Jacket Toys PH</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<main class="contact-page">
+  <h1>CONTACT US</h1>
+  <p>A shop running for 6 years, providing all your kidult needs</p>
+
+  <section class="socials-section">
+    <h2>SOCIALS</h2>
+    <div class="socials-container">
+    <a href="https://www.tiktok.com/@yellowjacketph" class="social-contact" aria-label="Tiktok" target="_blank">
+      <img src="images/socials/tiktok.png" alt="Tiktok" />
+      <span>Tiktok</span>
+    </a>
+    <a href="https://shopee.ph/yellowjacketph?page=0&shopCollection=246592374" class="social-contact" aria-label="Shopee" target="_blank">
+      <img src="images/socials/shopee.png" alt="Shopee" />
+      <span>Shopee</span>
+    </a>
+    <a href="https://www.facebook.com/YellowJacketToysPH" class="social-contact" aria-label="Facebook" target="_blank">
+      <img src="images/socials/facebook.png" alt="Facebook" />
+      <span>Facebook</span>
+    </a>
+    <a href="https://www.instagram.com/yellowjacketph/?fbclid=IwY2xjawOD-qJleHRuA2FlbQIxMABicmlkETFkNnBnd1V5aVFHOG14ak9xc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHt-5gL9X4iCNHFxlhDxSiUmzLWG_19SY8z_TzSVEYdnanqWZkHK_j4dJJDXh_aem_A9srJVbK6mKk75qUjKtP1w" class="social-contact" aria-label="Instagram" target="_blank">
+      <img src="images/socials/instagram.png" alt="Instagram" />
+      <span>Instagram</span>
+    </a>
+  </div>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+// Load header
+fetch('header.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('header-placeholder').innerHTML = data;
+  });
+// Load footer
+fetch('footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('footer-placeholder').innerHTML = data;
+  });
+</script>
+
+</body>
+</html>

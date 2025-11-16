@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Products - Yellow Jacket Toys PH</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<main class="products-page">
+  <h1>PRODUCTS</h1>
+  <p>Find all the figures you need for your collection</p>
+
+  <div class="search-bar">
+    <input type="search" id="searchInput" placeholder="Search Products" aria-label="Search Products" />
+  </div>
+
+  <div class="product-list">
+    <!-- Example product cards -->
+    <div class="product-card" 
+         data-name="Nendoroid Frieren: Winter Clothes Ver." 
+         data-description="From the anime Frieren: Beyond Journey's End comes a Nendoroid of Frieren in her winter clothes!" 
+         data-price="₱2,575" 
+         data-link="https://shopee.ph/Nendoroid-Frieren-Winter-Clothes-Ver.-i.46216431.42209317086?extraParams=%7B%22display_model_id%22%3A178994273534%7D">
+      <img src="images/products/nendoroid_frieren_winter_clothes_ver.webp" alt="Nendoroid Frieren: Winter Clothes Ver." />
+      <h3>GOOD SMILE COMPANY - Nendoroid Frieren: Winter Clothes Ver.</h3>
+      <p>Regular price - ₱2,575.00</p>
+    </div>
+
+    <div class="product-card" 
+         data-name="Nendoroid Hitori Gotoh: Maid Ver. [Basic] (BOCCHI THE ROCK)" 
+         data-description="Hitori Gotoh is now a Nendoroid in her maid outfit! From the anime Bocchi the Rock! comes a Nendoroid of Hitori Gotoh in her maid outfit!" 
+         data-price="₱1,450" 
+         data-link="https://shopee.ph/Nendoroid-Hitori-Gotoh-Maid-Ver.-Basic-(BOCCHI-THE-ROCK)-i.46216431.40825459766?extraParams=%7B%22display_model_id%22%3A262065477501%7D">
+      <img src="images/products/nendoroid_hitori_gotoh_maid_ver.webp" alt="Nendoroid Hitori Gotoh: Maid Ver. [Basic] (BOCCHI THE ROCK)" />
+      <h3>GOOD SMILE COMPANY - Nendoroid Hitori Gotoh: Maid Ver. [Basic] (BOCCHI THE ROCK)</h3>
+      <p>Regular price - ₱1,450.00</p>
+    </div>
+
+    <div class="product-card" 
+         data-name="Nendoroid Bachira Meguru (BLUELOCK)" 
+         data-description="From the anime series BLUELOCK comes a Nendoroid of Bachira Meguru!" 
+         data-price="₱2,575" 
+         data-link="https://shopee.ph/Nendoroid-Bachira-Meguru-(BLUELOCK)-i.46216431.41459313085?extraParams=%7B%22display_model_id%22%3A260780737681%7D">
+      <img src="images/products/nendoroid_bachira_meguru_(BLUELOCK).webp" alt="Nendoroid Bachira Meguru (BLUELOCK)" />
+      <h3>GOOD SMILE COMPANY - Nendoroid Bachira Meguru (BLUELOCK)</h3>
+      <p>Regular price - ₱2,575.00</p>
+    </div>
+  </div>
+</main>
+
+<!-- Pop-up modal for product details -->
+<div id="productModal" class="modal">
+  <div class="modal-content">
+    <span id="modalClose" class="close">&times;</span>
+    <h2 id="modalProductName"></h2>
+    <div id="modalProductDescription" class="modal-description"></div>  <!-- Changed to <div> for better formatting -->
+    <p id="modalProductPrice" class="modal-price"></p>
+    <a href="#" id="modalBuyButton" target="_blank" class="btn-buy">Buy on Shopee</a>
+  </div>
+</div>
+
+<div id="footer-placeholder"></div>
+
+<script>
+// Load header
+fetch('header.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('header-placeholder').innerHTML = data;
+  })
+  .catch(error => console.error('Error loading header:', error));  // Added error handling
+
+// Load footer
+fetch('footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('footer-placeholder').innerHTML = data;
+  })
+  .catch(error => console.error('Error loading footer:', error));  // Added error handling
+
+// Product modal functionality
+const productCards = document.querySelectorAll('.product-card');
+const modal = document.getElementById('productModal');
+const modalClose = document.getElementById('modalClose');
+const modalName = document.getElementById('modalProductName');
+const modalDesc = document.getElementById('modalProductDescription');
+const modalPrice = document.getElementById('modalProductPrice');
+const modalBuy = document.getElementById('modalBuyButton');
+const searchInput = document.getElementById('searchInput');
+
+productCards.forEach(card => {
+  card.addEventListener('click', () => {
+    modalName.textContent = card.dataset.name;
+    modalDesc.innerHTML = card.dataset.description;  // Changed to innerHTML for <br> support
+    modalPrice.textContent = card.dataset.price;
+    modalBuy.href = card.dataset.link;
+    modal.style.display = 'block';
+  });
+});
+
+modalClose.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+
+// Search filter
+searchInput.addEventListener('input', () => {
+  const filter = searchInput.value.toLowerCase();
+  productCards.forEach(card => {
+    const name = card.dataset.name.toLowerCase();
+    card.style.display = name.includes(filter) ? 'block' : 'none';
+  });
+});
+</script>
+
+</body>
+</html>

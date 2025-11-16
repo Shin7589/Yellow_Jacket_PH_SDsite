@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Yellow Jacket Toys PH - Home</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-home">
+<div id="header-placeholder"></div>
+
+<main>
+  <section class="hero">
+    <h1 class="hero-title">YELLOW JACKET TOYS PH</h1>
+    <p class="tagline">Certified Kidult!</p>
+  </section>
+
+  <section class="about-intro">
+    <div class="about-image">
+      <img src="images/products/nendoroid_kafka.jpg" alt="Toys Display" />
+    </div>
+    <div class="about-text">
+      <h2>WHAT IS YELLOW JACKET TOYS PH?</h2>
+      <p>ABOUT INFO HERE</p>
+    </div>
+  </section>
+
+  <section class="heading-container">
+    <h2 class="section-subtitle">
+      We provide and offer the best service for your figure hunting needs
+    </h2>
+
+    <div class="core-values">
+      <div class="core-box">
+        <img src="images/elements/check.png" alt="Check" class="check-icon" />
+        <h3>100% AUTHENTIC</h3>
+        <p>All products are authentic and original from our partnered suppliers</p>
+      </div>
+      <div class="core-box">
+        <img src="images/elements/japan.png" alt="Japan Stamp" class="japan-icon" />
+        <h3>100% FROM JAPAN</h3>
+        <p>All items are exported from Japan, straight from the company suppliers</p>
+      </div>
+      <div class="core-box">
+        <img src="images/elements/secure.png" alt="Secure Stamp" class="secure-icon" />
+        <h3>100% TRUSTED</h3>
+        <p>We are a trusted shop with 6 years of industry experience</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="products-intro">
+    <div class="products-image">
+      <img src="images/products/nendoroid_eva.jpg" alt="Product collection" />
+    </div>
+    <div class="products-text">
+      <h2>YELLOW JACKET TOYS PH</h2>
+      <p>Looking for the figures and nendroids you need? Check out our products list!</p>
+      <a href="products.html" class="btn-products">PRODUCTS</a>
+    </div>
+  </section>
+  
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+  // Load header
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+    });
+  // Load footer
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    });
+  </script>
+
+</body>
+</html>
